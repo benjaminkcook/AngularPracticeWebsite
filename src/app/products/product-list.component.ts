@@ -61,5 +61,10 @@ export class ProductListComponent implements OnInit{
 
     onRatingClicked(message: string): void {
         this.pageTitle = 'Product List: ' + message;
+        setTimeout(this.revertPageTitle.bind(this), 1500);
+    }
+
+    revertPageTitle(): void {
+        this.pageTitle = 'Product List'
     }
 }
