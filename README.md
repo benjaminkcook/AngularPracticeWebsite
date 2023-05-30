@@ -49,3 +49,5 @@ The following are detailed instructions for installing the code so you can code 
    # Additional Info
    Uses bootstrap https://opencollective.com/bootstrap
    Uses font-awesome
+   ng g c [component name]  -- this generates an angular component
+   ng g g [file path] -- to create a guard on a component

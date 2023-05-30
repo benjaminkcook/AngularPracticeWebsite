@@ -4,7 +4,6 @@ import { ProductService } from "./product.service";
 import { Subscription } from "rxjs";
 
 @Component ({
-    selector: 'pm-products',
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
@@ -53,7 +52,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.sub.unsubscribe();
-    }
+    } 
 
     onRatingClicked(message: string): void {
         this.pageTitle = 'Product List: ' + message;
