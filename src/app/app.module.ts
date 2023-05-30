@@ -5,6 +5,7 @@ import { ProductListComponent } from './products/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   // define which component belongs to this module
@@ -17,7 +18,8 @@ import { StarComponent } from './shared/star.component';
   // define the external modules that we want available to all components that belong to this module
   imports: [ 
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   // define the startup component of the application
