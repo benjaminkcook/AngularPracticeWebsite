@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { RouterModule } from '@angular/router';
 import { WelcomeComponent } from './home/welcome.component';
+import { createCustomElement } from '@angular/elements';
 
 @NgModule({
   // define which component belongs to this module
@@ -37,4 +38,10 @@ import { WelcomeComponent } from './home/welcome.component';
   // define the startup component of the application
   bootstrap: [AppComponent] 
 })
-export class AppModule { }
+
+export class AppModule { 
+  constructor(private injector: Injector) {
+    const el = createCustomElement(AppComponent, { injector: this.injector });
+    customElements.define('custom-app', el);
+  }
+}
